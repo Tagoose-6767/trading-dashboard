@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  }
+  .animate-pulse-fast {
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .glow-bull {
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+  }
+  .glow-bear {
+    box-shadow: 0 0 12px rgba(225, 29, 72, 0.3);
+  }
+  .glow-warn {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+  }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.ticker-scroll {
+  animation: ticker 40s linear infinite;
+}
